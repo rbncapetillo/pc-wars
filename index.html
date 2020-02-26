@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1, minimum-scale=1">
+  <script src="app/lib/angular.min.js"></script>
+  <script src="app/lib/angular-route.min.js"></script>
+  <link rel="stylesheet" href="global.css">
+  <title>PC master race</title>
+</head>
+<body ng-app="myApp">
+  <div class="container-app">
+    <div ng-view class="div-container"></div>
+  </div>
+  <script src="app/app.js"></script>
+  <script src="app/services/service.js"></script>
+  <script src="app/services/serviceRequest.js"></script>
+  <script src="app/pages/home/HomeController.js"></script>
+  <script src="app/pages/settings/SettingsController.js"></script>
+  <script src="app/services/serviceCatalog.js"></script>
+</body>
+</html>

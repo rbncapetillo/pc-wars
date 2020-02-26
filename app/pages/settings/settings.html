@@ -1,0 +1,35 @@
+
+<section class="settings-buttons">
+  <article class="article-processor">
+    <button ng-click="processorClick(e)" class="article-processor__btn">Processor</button>
+    <select ng-options="item.name for item in processor" ng-model="selectedProcessor" ng-change="myFunction()">
+      <option value="">Selecciona una opción</option>
+    </select>
+    <p>{{ selectedProcessor.name | uppercase }}</p>
+    <p>{{ selectedData.name | uppercase }}</p>
+  </article>
+  <article class="article-hdd">
+    <button ng-click="hddClick()" class="article-hdd__btn">Hard Disk Driver</button>
+    <select ng-options="item.name for item in hdd" ng-model="selectedHdd">
+      <option value="" >Selecciona una opción</option>
+    </select>
+    <p>{{ selectedHdd.name | uppercase }}</p>
+  </article>
+  <article class="article-ram">
+    <button ng-click="ramClick()" class="article-ram__btn">RAM</button>
+    <select ng-options="item.name for item in ram" ng-model="selectedRam">
+      <option value="" >Selecciona una opción</option>
+    </select>
+    <p>{{ selectedRam.name | uppercase }}</p>
+  </article>
+  <article class="article-gc">
+    <button ng-click="gcClick()" class="article-gc__btn">Graphic Card</button>
+    <select ng-options="item.name for item in gc" ng-model="selectedGc">
+      <option value="">Selecciona una opción</option>
+    </select>
+    <p>{{ selectedGc.name | uppercase }}</p>
+  </article>
+  <article class="article-goback">
+    <button ng-click="goBack()" class="article-goback__btn">Regresar</button>
+  </article>
+</section>
