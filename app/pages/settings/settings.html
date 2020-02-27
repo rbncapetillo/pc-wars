@@ -1,34 +1,46 @@
 
-<section class="settings-buttons">
+<section class="settings-buttons" ng-show="settingsReview">
   <article class="article-processor">
-    <button ng-click="processorClick(e)" class="article-processor__btn">Processor</button>
-    <select ng-options="item.name for item in processor" ng-model="selectedProcessor" ng-change="myFunction()">
+    <button ng-click="processorClick()" class="article-processor__btn">Processor</button>
+    <select ng-options="item.name for item in processor" ng-model="selectedProcessor" ng-change="processorAction($event)" value="{{selectedProcessor.name}}">
       <option value="">Selecciona una opción</option>
     </select>
-    <p>{{ selectedProcessor.name | uppercase }}</p>
-    <p>{{ selectedData.name | uppercase }}</p>
+    <p class="article-processor__actual-selection">Tu selección actual: <span>{{ selectedProcessor.name | uppercase }}</span></p>
   </article>
   <article class="article-hdd">
     <button ng-click="hddClick()" class="article-hdd__btn">Hard Disk Driver</button>
-    <select ng-options="item.name for item in hdd" ng-model="selectedHdd">
+    <select ng-options="item.name for item in hdd" ng-model="selectedHdd" ng-change="hddAction()">
       <option value="" >Selecciona una opción</option>
     </select>
-    <p>{{ selectedHdd.name | uppercase }}</p>
+    <p class="article-hdd__actual-selection" >Tu selección actual: <span>{{ selectedHdd.name | uppercase }}</span></p>
   </article>
   <article class="article-ram">
     <button ng-click="ramClick()" class="article-ram__btn">RAM</button>
-    <select ng-options="item.name for item in ram" ng-model="selectedRam">
+    <select ng-options="item.name for item in ram" ng-model="selectedRam" ng-change="ramAction()">
       <option value="" >Selecciona una opción</option>
     </select>
-    <p>{{ selectedRam.name | uppercase }}</p>
+    <p class="article-ram__actual-selection">Tu selección actual: <span>{{ selectedRam.name | uppercase }}</span></p>
   </article>
   <article class="article-gc">
     <button ng-click="gcClick()" class="article-gc__btn">Graphic Card</button>
-    <select ng-options="item.name for item in gc" ng-model="selectedGc">
+    <select ng-options="item.name for item in gc" ng-model="selectedGc" ng-change="gcAction()">
       <option value="">Selecciona una opción</option>
     </select>
-    <p>{{ selectedGc.name | uppercase }}</p>
+    <p class="article-gc__actual-selection">Tu selección actual: <span>{{ selectedGc.name | uppercase }}</span></p>
   </article>
+  <article class="article-goback">
+    <button ng-click="goBack()" class="article-goback__btn">Regresar</button>
+  </article>
+</section>
+<section class="settings-review" ng-show="powerReview">
+  <p class="article-processor__before-selection" ng-if="defaultProcessorView">Procesador de fábrica: <span>{{ defaultProcessor | uppercase }}</span></p>
+  <p class="article-processor__before-selection" ng-if="newProcessorView">Nuevo procesador: <span>{{ newProcessor.name | uppercase }}</span></p>
+  <p class="article-hdd__before-selection" ng-if="defaultHddView">Disco duro de fábrica: <span>{{ defaultHdd | uppercase }}</span></p>
+  <p class="article-hdd__before-selection" ng-if="newHddView">Nuevo disco duro: <span>{{ newHdd.name | uppercase }}</span></p>
+  <p class="article-ram__before-selection" ng-if="defaultRamView">Memoria RAM de fábrica: <span>{{ defaultRam | uppercase }}</span></p>
+  <p class="article-ram__before-selection" ng-if="newRamView">Nueva memoria RAM: <span>{{ newRam.name | uppercase }}</span></p>
+  <p class="article-gc-selection" ng-if="defaultGcView">Tarjeta Gráfica de fábrica: <span>{{ defaultGc | uppercase }}</span></p>
+  <p class="article-gc-selection" ng-if="newGcView">Nueva Tarjeta Gráfica: <span>{{ newGc.name | uppercase }}</span></p>
   <article class="article-goback">
     <button ng-click="goBack()" class="article-goback__btn">Regresar</button>
   </article>

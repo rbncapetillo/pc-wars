@@ -79,6 +79,10 @@ body {
   padding: 1.2em;
 }
 
+.article-processor__actual-selection {
+  
+}
+
 .article-hdd {
   display: flex;
   align-items: center;
